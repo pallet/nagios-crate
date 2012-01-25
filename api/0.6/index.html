@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><link href="css/default.css" rel="stylesheet" type="text/css"><script src="js/jquery.min.js" type="text/javascript"></script><script src="js/page_effects.js" type="text/javascript"></script><title>Nagios 0.6.0-SNAPSHOT API documentation</title></head><body><div id="header"><h1><a href="index.html">Nagios 0.6.0-SNAPSHOT API documentation</a></h1></div><div class="sidebar" id="namespaces"><h3>Namespaces</h3><ul><li><a href="pallet.crate.nagios.html">pallet.crate.nagios</a></li><li><a href="pallet.crate.nagios-config.html">pallet.crate.nagios-config</a></li></ul></div><div class="namespace-index" id="content"><h2>Nagios 0.6.0-SNAPSHOT API documentation</h2><div class="doc">Pallet - parent pom</div><div class="namespace"><h3><a href="pallet.crate.nagios.html">pallet.crate.nagios</a></h3><pre class="doc">Crate to install and configure nagios 3.
+
+`nagios` installs nagios from packages. Functions are provided for generating
+the nagios configuration files.
+
+See the `nagios-config` crate for configuring nodes to be monitored by nagios.
+
+It is intended that the nagios server node and all montiored nodes are
+specified in any `lift` or `converge` operation used to configure any of these
+nodes.
+
+Tested on ubuntu 10.04</pre><div class="index"><p>Public variables and functions:</p><ul><li><a href="pallet.crate.nagios.html#var-command">command</a></li><li><a href="pallet.crate.nagios.html#var-commands">commands</a></li><li><a href="pallet.crate.nagios.html#var-contact">contact</a></li><li><a href="pallet.crate.nagios.html#var-define">define</a></li><li><a href="pallet.crate.nagios.html#var-define-service">define-service</a></li><li><a href="pallet.crate.nagios.html#var-define-servicegroup">define-servicegroup</a></li><li><a href="pallet.crate.nagios.html#var-hostgroups">hostgroups</a></li><li><a href="pallet.crate.nagios.html#var-hosts">hosts</a></li><li><a href="pallet.crate.nagios.html#var-nagios">nagios</a></li><li><a href="pallet.crate.nagios.html#var-nagios-hostname">nagios-hostname</a></li><li><a href="pallet.crate.nagios.html#var-nrpe-command">nrpe-command</a></li><li><a href="pallet.crate.nagios.html#var-record-nagios-server">record-nagios-server</a></li><li><a href="pallet.crate.nagios.html#var-servicegroup">servicegroup</a></li><li><a href="pallet.crate.nagios.html#var-unmanaged-host">unmanaged-host</a></li></ul></div></div><div class="namespace"><h3><a href="pallet.crate.nagios-config.html">pallet.crate.nagios-config</a></h3><pre class="doc">Configures nodes to be monitored by nagios.
+
+`service` and `command` configure the nagios server to monitor the node
+against which they are executed.
+
+Some higher level configuration functions are provided for http monitoring.
+
+nrpe agent configuration is also supported.
+
+Tested on ubuntu 10.04</pre><div class="index"><p>Public variables and functions:</p><ul><li><a href="pallet.crate.nagios-config.html#var-command">command</a></li><li><a href="pallet.crate.nagios-config.html#var-monitor-http">monitor-http</a></li><li><a href="pallet.crate.nagios-config.html#var-monitor-https-certificate">monitor-https-certificate</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-disk">nrpe-check-disk</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-load">nrpe-check-load</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-total-procs">nrpe-check-total-procs</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-users">nrpe-check-users</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-zombie-procs">nrpe-check-zombie-procs</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-client">nrpe-client</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-client-port">nrpe-client-port</a></li><li><a href="pallet.crate.nagios-config.html#var-service">service</a></li></ul></div></div></div></body></html>

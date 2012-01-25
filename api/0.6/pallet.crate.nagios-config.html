@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><link href="css/default.css" rel="stylesheet" type="text/css"><script src="js/jquery.min.js" type="text/javascript"></script><script src="js/page_effects.js" type="text/javascript"></script><title>pallet.crate.nagios-config documentation</title></head><body><div id="header"><h1><a href="index.html">Nagios 0.6.0-SNAPSHOT API documentation</a></h1></div><div class="sidebar" id="namespaces"><h3>Namespaces</h3><ul><li><a href="pallet.crate.nagios.html">pallet.crate.nagios</a></li><li class="current"><a href="pallet.crate.nagios-config.html">pallet.crate.nagios-config</a></li></ul></div><div class="sidebar" id="vars"><h3>Public Vars</h3><ul><li><a href="pallet.crate.nagios-config.html#var-command">command</a></li><li><a href="pallet.crate.nagios-config.html#var-monitor-http">monitor-http</a></li><li><a href="pallet.crate.nagios-config.html#var-monitor-https-certificate">monitor-https-certificate</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-disk">nrpe-check-disk</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-load">nrpe-check-load</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-total-procs">nrpe-check-total-procs</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-users">nrpe-check-users</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-check-zombie-procs">nrpe-check-zombie-procs</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-client">nrpe-client</a></li><li><a href="pallet.crate.nagios-config.html#var-nrpe-client-port">nrpe-client-port</a></li><li><a href="pallet.crate.nagios-config.html#var-service">service</a></li></ul></div><div class="namespace-docs" id="content"><h2>pallet.crate.nagios-config documentation</h2><pre class="doc">Configures nodes to be monitored by nagios.
+
+`service` and `command` configure the nagios server to monitor the node
+against which they are executed.
+
+Some higher level configuration functions are provided for http monitoring.
+
+nrpe agent configuration is also supported.
+
+Tested on ubuntu 10.04</pre><div class="public" id="var-command"><h3>command</h3><div class="usage"><code>(command session &amp; {:keys [command_name command_line], :as options})</code></div><pre class="doc">Configure nagios command monitoring.
+:command_name name
+:command_line command line</pre></div><div class="public" id="var-monitor-http"><h3>monitor-http</h3><div class="usage"><code>(monitor-http session &amp; {:keys [port ssl use-ipv4 use-ipv6 timeout no-body url expect string method], :or {timeout 10}, :as options})</code></div><pre class="doc">Declare that a node's http service should be monitored by a nagios server.
+Uses the nagios `check_http` plugin to perform the checking, and options are
+passed to the plugin.</pre></div><div class="public" id="var-monitor-https-certificate"><h3>monitor-https-certificate</h3><div class="usage"><code>(monitor-https-certificate session &amp; {:keys [port ssl use-ipv4 use-ipv6 timeout certificate], :or {timeout 10, certificate 14}, :as options})</code></div><pre class="doc">Declare that a node's https certificate should be monitored by a nagios
+server.  Uses the nagios `check_http` plugin to perform the checking, and
+options are passed to the plugin.</pre></div><div class="public" id="var-nrpe-check-disk"><h3>nrpe-check-disk</h3><div class="usage"><code>(nrpe-check-disk session)</code></div><pre class="doc">Configure the nrpe check_disk plugin.
+This checks the hda1 device.</pre></div><div class="public" id="var-nrpe-check-load"><h3>nrpe-check-load</h3><div class="usage"><code>(nrpe-check-load session)</code></div><pre class="doc">Configure the nrpe check_load plugin.
+</pre></div><div class="public" id="var-nrpe-check-total-procs"><h3>nrpe-check-total-procs</h3><div class="usage"><code>(nrpe-check-total-procs session)</code></div><pre class="doc">Configure the nrpe check_total_procs plugin.
+</pre></div><div class="public" id="var-nrpe-check-users"><h3>nrpe-check-users</h3><div class="usage"><code>(nrpe-check-users session)</code></div><pre class="doc">Configure the nrpe check_users plugin.
+</pre></div><div class="public" id="var-nrpe-check-zombie-procs"><h3>nrpe-check-zombie-procs</h3><div class="usage"><code>(nrpe-check-zombie-procs session)</code></div><pre class="doc">Configure the nrpe check_zombie_procs plugin.
+</pre></div><div class="public" id="var-nrpe-client"><h3>nrpe-client</h3><div class="usage"><code>(nrpe-client session)</code></div><pre class="doc">Configure nrpe on machine to be monitored
+</pre></div><div class="public" id="var-nrpe-client-port"><h3>nrpe-client-port</h3><div class="usage"><code>(nrpe-client-port session)</code></div><pre class="doc">Open the nrpe client port to the nagios server ip.  Used on the nagios server
+node to allow reporting via nrpe clients on monitored nodes.</pre></div><div class="public" id="var-service"><h3>service</h3><div class="usage"><code>(service session {:keys [host_name], :as options})</code></div><pre class="doc">Configure nagios service monitoring.
+:servicegroups        name for service group(s) service should be part of
+:check_command        command for service
+:service_description  description for the service</pre></div></div></body></html>
