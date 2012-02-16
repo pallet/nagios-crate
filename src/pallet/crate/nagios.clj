@@ -21,8 +21,13 @@
    [pallet.parameter :as parameter]
    [pallet.phase :as phase]
    [pallet.session :as session]
-   [clojure.string :as string]
-   [clojure.contrib.condition :as condition]))
+   [clojure.string :as string]))
+
+;; slingshot version compatibility
+(try
+  (use '[slingshot.slingshot :only [throw+]])
+  (catch Exception _
+    (use '[slingshot.core :only [throw+]])))
 
 (defn nagios-hostname
   "Return the nagios hostname for a node"
@@ -170,9 +175,9 @@ define command {
   [properties]
   (when-not
       (every? properties #{:servicegroup_name})
-    (condition/raise
-     :type :invalid-servicegroup-definiton
-     :message (format "Invalid servicegroup definition : %s" properties)))
+    (throw+
+     {:type :invalid-servicegroup-definiton
+      :message (format "Invalid servicegroup definition : %s" properties)}))
   (define "servicegroup"
     (select-keys
      properties
@@ -184,9 +189,9 @@ define command {
   [properties]
   (when-not
       (every? properties #{:service_description :host_name :check_command})
-    (condition/raise
-     :type :invalid-service-definiton
-     :message (format "Invalid service definition : %s" properties)))
+    (throw+
+     {:type :invalid-service-definiton
+      :message (format "Invalid service definition : %s" properties)}))
   (define "service"
     (select-keys
      properties
